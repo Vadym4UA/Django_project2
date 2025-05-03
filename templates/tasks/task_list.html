@@ -1,0 +1,10 @@
+<h1>Всі завдання</h1>
+<ul>
+{% for task in tasks %}
+    <li>
+        {{ task.title }} ({{ task.get_status_display }})
+        <br>Категорія: {{ task.category.name }}
+        <br>Дедлайн: {{ task.deadline }}
+    </li>
+{% endfor %}
+</ul>
