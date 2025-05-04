@@ -34,12 +34,12 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    # Swagger/Redoc (має бути першими!)
-    path('swagger<format>/', schema_view.without_ui(cache_timeout=0)),  # для json/yaml
-    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0)),  # UI
-    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0)),  # ReDoc
+
+    path('swagger<format>/', schema_view.without_ui(cache_timeout=0)),  
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0)), 
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0)),  
     
-    # Інші URL
+
     path('admin/', admin.site.urls),
     path('api/', include('tasks.urls')),
 ]
